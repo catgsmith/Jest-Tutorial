@@ -24,7 +24,7 @@ const multipleAdd = (counter) => {
     Tests
    ---------------------------------------------------- */
 // create a mockCounter with a fake add mthd which has no effect on value of count
-/* test("singleAdd > jest.fn() toHaveBeenCalledWith() single call", () => {
+test("singleAdd > jest.fn() toHaveBeenCalledWith() single call", () => {
   const mockCounter = {
     add: jest.fn(),
   };
@@ -38,7 +38,7 @@ test("singleAdd > jest.spyOn() toHaveBeenCalledWith() single call", () => {
   singleAdd(counter);                     // call with real counter
   expect(addSpy).toHaveBeenCalledWith(10);// spy monitors -been-called  
   expect(counter.getCount()).toEqual(10); // counter value has been changed
-}); */
+});
 
 test("multipleAdd > jest.fn() toHaveBeenCalledWith() multiple calls", () => {
   const mockCounter = {
@@ -53,6 +53,7 @@ test("multipleAdd > jest.fn() toHaveBeenCalledWith() multiple calls", () => {
 test("multipleAdd > jest.fn() toHaveBeenCalledWith() multiple calls", () => {
   const addSpy = jest.spyOn(counter, "add");
   multipleAdd(counter);
+  // expect assertions are stacked
   expect(addSpy).toHaveBeenCalledWith(15);
   expect(addSpy).toHaveBeenCalledWith(20);
 });

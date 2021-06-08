@@ -11,9 +11,10 @@ $ mkdir jest_tutorial
 $ cd jest_tutorial
 $ npm init -y
 $ npm install --save-dev jest
-
-
 ```
+
+In package.json file set `scripts.test` property to `"jest"`
+
 
 ## Usage
 
@@ -37,6 +38,7 @@ Tutorial : https://www.youtube.com/watch?v=7r4xVDI2vho
 
 Testing with Jest: From zero to hero
 Tutorial : https://www.youtube.com/watch?v=NHMIn723hQY
+See : zeroToHero.test.js
 
 Blog: Jest .fn() and .spyOn() spy/stub/mock assertion reference
 https://codewithhugo.com/jest-fn-spyon-stub-mock/
