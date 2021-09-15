@@ -4,7 +4,7 @@ const pizzas = require("../data.json");
     https://www.youtube.com/watch?v=NHMIn723hQY
    ---------------------------------------------------- */
 // very basic test to notify the user if our pizza data has changed
-test("the pizza data is correct", () => {
+it("the pizza data is correct", () => {
   // SNAPSHOT
   // changing data.json will mismatch with existing snapshot - Test Fails
   expect(pizzas).toMatchSnapshot(); // creates _snapshots_ dir here!
@@ -29,13 +29,13 @@ for (let i = 0; i < pizzas.length; i += 1) {
   });
 }
 
-test("mock implementation of a basic function", () => {
+it("mock implementation of a basic function", () => {
   const mock = jest.fn(() => "I am a mock function");
   expect(mock("Calling my mock function")).toBe("I am a mock function");
   expect(mock).toHaveBeenCalledWith("Calling my mock function");
 });
 
-test("mock return value one time", () => {
+it("mock return value one time", () => {
   const mock = jest.fn();
   mock.mockReturnValueOnce("Hello").mockReturnValueOnce("there!");
 
@@ -48,7 +48,7 @@ test("mock return value one time", () => {
   expect(mock).toHaveBeenCalledWith("Hello", "there", "Gary");
 });
 
-test("mock implementation of a function", () => {
+it("mock implementation of a function", () => {
   //const mock = jest.fn(() => 'Ireland'); // Same
   const mock = jest.fn().mockImplementation(() => "Ireland");
 
@@ -56,7 +56,7 @@ test("mock implementation of a function", () => {
   expect(mock).toHaveBeenCalledWith("Location");
 });
 
-test("spying using original implementation", () => {
+it("spying using original implementation", () => {
   const pizza = {
     name: (n) => `Pizza name: ${n}`,
   };
@@ -66,7 +66,7 @@ test("spying using original implementation", () => {
   expect(spy).toHaveBeenCalledWith("Florentine");
 });
 
-test("spying using mockImplementation", () => {
+it("spying using mockImplementation", () => {
   const pizza = {
     name: (n) => `Pizza name: ${n}`,
   };
@@ -82,7 +82,7 @@ test("spying using mockImplementation", () => {
 });
 
 // let's test pizza return output
-test("pizza returns new york pizza last", () => {
+it("pizza returns new york pizza last", () => {
   const pizza1 = pizzas[0];
   const pizza2 = pizzas[1];
   const pizza3 = pizzas[2];
@@ -97,7 +97,7 @@ test("pizza returns new york pizza last", () => {
 });
 
 // let's match some data against our object
-test("pizza data has new york pizza and matches as an object", () => {
+it("pizza data has new york pizza and matches as an object", () => {
   const newYorkPizza = {
     id: 3,
     name: "New York Pizza",
@@ -109,14 +109,14 @@ test("pizza data has new york pizza and matches as an object", () => {
 });
 
 // async example, always return a promise (can switch out resolves with reject)
-test("expect a promise to resolve", async () => {
+it("expect a promise to resolve", async () => {
   const user = {
     getFullName: jest.fn(() => Promise.resolve("Karl Hadwen")),
   };
   await expect(user.getFullName("Karl Hadwen")).resolves.toBe("Karl Hadwen");
 });
 
-test("expect a promise to reject", async () => {
+it("expect a promise to reject", async () => {
   const user = {
     getFullName: jest.fn(() =>
       Promise.reject(new Error("Something went wrong"))

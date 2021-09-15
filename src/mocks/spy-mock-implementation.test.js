@@ -14,7 +14,7 @@ const myObject = {
    
 // Assertions for a spy/mock/stub
 // ----------------------------------------------------------
-test("stub .toBeCalled()", () => {
+it("stub .toBeCalled()", () => {
   const stub = jest.fn();
   stub();
   expect(stub).toBeCalled(); // was the stub/spy called?
@@ -22,7 +22,7 @@ test("stub .toBeCalled()", () => {
 
 // Call the actual function RESULT: console.log I HAVE BEEN INVOKED
 // ----------------------------------------------------------
-test("spyOn .toBeCalled()", () => {
+it("spyOn .toBeCalled()", () => {
   const somethingSpy = jest.spyOn(myObject, "doSomething");
   myObject.doSomething();
   expect(somethingSpy).toBeCalled();
@@ -34,7 +34,7 @@ test("spyOn .toBeCalled()", () => {
 
 // mock Implementation - to replace a spied-on function’s implementation
 // ----------------------------------------------------------
-test("spyOn().mockImplementation()", () => {
+it("spyOn().mockImplementation()", () => {
   const somethingSpy = jest.spyOn(myObject, "doSomething").mockImplementation();
   myObject.doSomething();
   expect(somethingSpy).toHaveBeenCalled();
@@ -42,7 +42,7 @@ test("spyOn().mockImplementation()", () => {
 
 //mock Return Value - to replace a spied-on function’s implementation
 // ----------------------------------------------------------
-test("spyOn().mockReturnValue()", () => {
+it("spyOn().mockReturnValue()", () => {
   const somethingSpy = jest.spyOn(myObject, "doSomething").mockReturnValue();
   myObject.doSomething();
   expect(somethingSpy).toHaveBeenCalled();

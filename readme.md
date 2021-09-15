@@ -15,6 +15,14 @@ $ npm install --save-dev jest
 
 In package.json file set `scripts.test` property to `"jest"`
 
+# Axios
+For youTube tutorial `Jest Crash Course - Unit Testing in JavaScript`,
+using axios to mock up aysnc tests in `function.js`.
+
+```bash
+$ npm install --save-dev axios
+```
+
 
 ## Usage
 
@@ -28,6 +36,14 @@ npm test mocks
 
 ```bash
 npm test spy-mock-implementation.test
+```
+
+```bash
+\\ Jest Crash Course - Unit Testing in JavaScript
+npm test functions.test 
+npm test reverseString.test
+npm test chunk.test
+npm test anagram.test
 ```
 
 ## Resources

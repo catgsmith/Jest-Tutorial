@@ -4,7 +4,7 @@ function isAnagram(str1, str2) {
 
 // Helper function
 function formatStr(str) {
-    return str.replace(/[^\w]/g, )
+    return str.replace(/[^\w]/g, '')
     .toLowerCase()
     .split('')
     .sort()

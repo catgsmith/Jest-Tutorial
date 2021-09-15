@@ -23,7 +23,7 @@ const app = (counter) => {
 
 // create a mockCounter with a fake increment mthd which has no effect on value of count 
 // NO console.log 'invoked increment' 
-test("app() with mock counter .toHaveBeenCalledTimes(1)", () => {
+it("app() with mock counter .toHaveBeenCalledTimes(1)", () => {
   const mockCounter = {
     increment: jest.fn(),  // make fake increment method
   };
@@ -35,7 +35,7 @@ test("app() with mock counter .toHaveBeenCalledTimes(1)", () => {
 
 // replace the increment mthd with a spy
 // TWICE console.log 'invoked increment' 
-test("app() with jest.spyOn(counter) toHaveBeenCalledTimes(1)", () => {
+it("app() with jest.spyOn(counter) toHaveBeenCalledTimes(1)", () => {
   const incrementSpy = jest.spyOn(counter, "increment");
   app(counter);                                 // call with real counter
   app(counter);

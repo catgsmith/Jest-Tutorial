@@ -1,10 +1,10 @@
 const transformItems = require('./transformItems');
 
-test('transformItems function exists', () => {
+it('transformItems function exists', () => {
     expect(transformItems).toBeDefined();
 });
 
-test('transformItems performs using mockCallback', () => {
+it('transformItems performs using mockCallback', () => {
     const mockCallback = jest.fn(x => 42 + x);
     transformItems([0, 1], mockCallback);
 
